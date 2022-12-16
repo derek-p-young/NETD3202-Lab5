@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Lab5.Models.Expense>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<h1>Expenses</h1>
+<p>
+    <a class="btn btn-primary btn-lg" asp-action="Create">Create New Expense</a>
+</p>
+<table class="table-sm table-striped table-hover table-responsive">
+    <thead class="table-primary">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExpenseCategory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaymentMethod)
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Amount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExpenseCategory.CategoryName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PaymentMethod.PaymentMethodName)
+                </td>
+                <td class="btn-group">
+                    <a class="btn btn-primary mx-1" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    <a class="btn btn-info mx-1" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    <a class="btn btn-danger mx-1" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
