@@ -4,14 +4,19 @@
     ViewData["Title"] = "Index";
 }
 
-
+<!-- Main content title -->
 <h1>Payment Methods</h1>
+
+<!-- Button to create a new payment method -->
 <p>
     <a class="btn btn-primary btn-lg" asp-action="Create">Create New Method</a>
 </p>
+
+<!-- Table to display all payment methods -->
 <table class="table-sm table-striped table-hover table-responsive">
     <thead class="table-primary">
         <tr>
+            <!-- Header for payment method name field -->
             <th>
                 @Html.DisplayNameFor(model => model.PaymentMethodName)
             </th>
@@ -22,9 +27,11 @@
         @foreach (var item in Model)
         {
             <tr>
+                <!-- Display the name of the current payment method -->
                 <td>
                     @Html.DisplayFor(modelItem => item.PaymentMethodName)
                 </td>
+                <!-- Display the buttons for Edit, Details and Delete -->
                 <td class="btn-group">
                     <a class="btn btn-primary mx-1" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
                     <a class="btn btn-info mx-1" asp-action="Details" asp-route-id="@item.Id">Details</a>

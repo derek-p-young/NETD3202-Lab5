@@ -4,23 +4,30 @@
     ViewData["Title"] = "Delete";
 }
 
+<!-- Main content title -->
 <h1>Delete Payment Method</h1>
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
     <hr />
+    <!-- Description list to display expense category details-->
     <dl class="row">
+        <!-- Display column title -->
         <dt class = "col-sm-3">
             @Html.DisplayNameFor(model => model.PaymentMethodName)
         </dt>
+        <!-- Display the value to be deleted -->
         <dd class = "col-sm-8">
             @Html.DisplayFor(model => model.PaymentMethodName)
         </dd>
     </dl>
     
+    <!-- Delete button -->
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
         <input type="submit" value="Delete" class="btn btn-danger" />
+
+        <!-- Return to Index button -->
         <a class="btn btn-info" asp-action="Index">Back to List</a>
     </form>
 </div>

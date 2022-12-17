@@ -10,6 +10,8 @@ namespace Lab5.Data
         {
 
         }
+
+        // Add DbSets to DbContext for creating database tables
         public DbSet<Expense> Expenses { get; set; }
         public DbSet<ExpenseCategory> ExpenseCategories { get; set; }
         public DbSet<PaymentMethod> PaymentMethods { get; set; }

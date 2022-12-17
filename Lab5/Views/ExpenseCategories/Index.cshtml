@@ -4,15 +4,19 @@
     ViewData["Title"] = "Index";
 }
 
-
-
+<!-- Main content title -->
 <h1>Expense Categories</h1>
+
+<!-- Button to create a new expense category -->
 <p>
     <a class="btn btn-primary btn-lg" asp-action="Create">Create New Category</a>
 </p>
+
+<!-- Table to display all expense categories -->
 <table class="table-sm table-striped table-hover table-responsive">
     <thead class="table-primary">
         <tr>
+            <!-- Set a table header for expense category -->
             <th>
                 @Html.DisplayNameFor(model => model.CategoryName)
             </th>
@@ -20,12 +24,15 @@
         </tr>
     </thead>
     <tbody>
+        <!--  Display a table row for each expense category instance with the category name, edit, details and delete buttons -->
         @foreach (var item in Model)
         {
             <tr>
+                <!-- Display the expense category instance's name -->
                 <td>
                     @Html.DisplayFor(modelItem => item.CategoryName)
                 </td>
+                <!-- Display the buttons for Edit, Details and Delete -->
                 <td class="btn-group">
                     <a class="btn btn-primary mx-1" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
                     <a class="btn btn-info mx-1" asp-action="Details" asp-route-id="@item.Id">Details</a>

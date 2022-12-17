@@ -4,10 +4,12 @@
     ViewData["Title"] = "Details";
 }
 
+<!-- Main content title -->
 <h1>Expense Details</h1>
 
 <div>
     <hr />
+    <!-- Description list to display the column title and value of the selected expense -->
     <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Date)
@@ -42,6 +44,8 @@
     </dl>
 </div>
 <div>
-    <a class="btn btn-primary btn-lg" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
-    <a class="btn btn-info btn-lg" asp-action="Index">Back to List</a>
+    <!-- Edit button -->
+    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+    <!-- Return to Index button -->
+    <a class="btn btn-info" asp-action="Index">Back to List</a>
 </div>

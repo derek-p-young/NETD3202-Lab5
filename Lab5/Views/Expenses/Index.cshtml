@@ -4,26 +4,36 @@
     ViewData["Title"] = "Index";
 }
 
-
+<!-- Main content title -->
 <h1>Expenses</h1>
+
+<!-- Button to create a new expense -->
 <p>
     <a class="btn btn-primary btn-lg" asp-action="Create">Create New Expense</a>
 </p>
+
+<!-- Table to display all expenses -->
 <table class="table-sm table-striped table-hover table-responsive">
     <thead class="table-primary">
+        <!-- Set table headers for each property of the expense -->
         <tr>
+            <!-- Header for date field -->
             <th>
                 @Html.DisplayNameFor(model => model.Date)
             </th>
+            <!-- Header for description field -->
             <th>
                 @Html.DisplayNameFor(model => model.Description)
             </th>
+            <!-- Header for dollar amount field -->
             <th>
                 @Html.DisplayNameFor(model => model.Amount)
             </th>
+            <!-- Header for expense category field -->
             <th>
                 @Html.DisplayNameFor(model => model.ExpenseCategory)
             </th>
+            <!-- Header for payment method field -->
             <th>
                 @Html.DisplayNameFor(model => model.PaymentMethod)
             </th>
@@ -31,24 +41,31 @@
         </tr>
     </thead>
     <tbody>
+        <!--  Display a table row for each expense instance, with edit, details and delete buttons -->
         @foreach (var item in Model)
         {
             <tr>
+                <!-- Display the date of the expense -->
                 <td>
                     @Html.DisplayFor(modelItem => item.Date)
                 </td>
+                <!-- Display the description of the expense -->
                 <td>
                     @Html.DisplayFor(modelItem => item.Description)
                 </td>
+                <!-- Display the dollar amount of the expense -->
                 <td>
                     @Html.DisplayFor(modelItem => item.Amount)
                 </td>
+                <!-- Display the expense category name of the expense -->
                 <td>
                     @Html.DisplayFor(modelItem => item.ExpenseCategory.CategoryName)
                 </td>
+                <!-- Display the payment method name related to the expense -->
                 <td>
                     @Html.DisplayFor(modelItem => item.PaymentMethod.PaymentMethodName)
                 </td>
+                <!-- Display the buttons for Edit, Details and Delete -->
                 <td class="btn-group">
                     <a class="btn btn-primary mx-1" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
                     <a class="btn btn-info mx-1" asp-action="Details" asp-route-id="@item.Id">Details</a>

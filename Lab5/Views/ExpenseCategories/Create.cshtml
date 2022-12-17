@@ -4,19 +4,22 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<!-- Main content title -->
+<h1>Create Expense Category</h1>
 
-<h4>ExpenseCategory</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
+        <!-- Form to create a new expense category -->
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <!-- Form group for expense category name field -->
             <div class="form-group">
                 <label asp-for="CategoryName" class="control-label"></label>
                 <input asp-for="CategoryName" class="form-control" />
                 <span asp-validation-for="CategoryName" class="text-danger"></span>
             </div>
+            <!-- Submit button -->
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
@@ -24,8 +27,9 @@
     </div>
 </div>
 
+<!-- Back to index button -->
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-info" asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
